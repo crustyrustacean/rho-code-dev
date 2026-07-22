@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{{ site.name }}{% endblock %}</title>
-        <link rel="icon" type="image/png" href="/static/favicon.png">
-        <link rel="stylesheet" href="/css/main.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+    <link rel="canonical" href="{{ site.base_url | safe }}{% if current_path %}{{ current_path | safe }}{% else %}/{% endif %}">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}{{ site.name }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+    <meta property="og:url" content="{{ site.base_url | safe }}{% if current_path %}{{ current_path | safe }}{% else %}/{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ site.name }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ site.name }}",
+        "url": "{{ site.base_url | safe }}",
+        "description": "rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows"
+    }
+    </script>
+</head>
 <body>
     <header class="site-header">
         <div class="container">
@@ -28,7 +55,8 @@
         </div>
     </main>
     <footer>
-        <p>&copy; {{ now.year }} {{ site.name }}</p>
+        <p>&copy; {{ now.year }} <a href="https://jeff-mitchell.dev" target="_blank" rel="noopener">Jeffery D Mitchell</a></p>
+        <p class="footer-built-with">Built with <a href="https://get-taxus-org.pages.dev" target="_blank" rel="noopener">Taxus</a></p>
     </footer>
     <!-- General interactivity via plain JavaScript -->
     <script src="/static/scripts.js"></script>
