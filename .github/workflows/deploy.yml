@@ -21,6 +21,9 @@ jobs:
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
 
+      - name: Add wasm32 target
+        run: rustup target add wasm32-unknown-unknown
+
       - name: Install taxus
         run: cargo install --git https://codeberg.org/crustyrustacean/taxus.git taxus
 
