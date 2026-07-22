@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}{{ page.title }} - {{ site.name }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block og_title %}{{ page.title }} - {{ site.name }}{% endblock %}
+{% block og_description %}{{ page.description }}{% endblock %}
+{% block twitter_title %}{{ page.title }} - {{ site.name }}{% endblock %}
+{% block twitter_description %}{{ page.description }}{% endblock %}
 
 {% block content %}
 <article>
