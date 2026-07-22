@@ -1,0 +1,6 @@
+# Cloudflare Pages configuration for rho-code.dev
+# This file is used by wrangler for deployment.
+# The site is built with taxus and output goes to dist/.
+
+name = "rho-code-dev"
+pages_build_output_dir = "dist"

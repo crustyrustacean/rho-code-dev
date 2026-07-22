@@ -68,6 +68,33 @@ The generated site will be in the `dist/` directory, ready for deployment.
 
 The site is designed to be deployed to any static hosting service. The built files in `dist/` contain everything needed.
 
+### Cloudflare Pages
+
+The site is configured for [Cloudflare Pages](https://pages.cloudflare.com/) deployment.
+
+#### Manual deployment
+
+```bash
+./deploy.ps1
+```
+
+You'll need a Cloudflare API token with Pages permissions:
+- If you have `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set as environment variables, it will use those.
+- Otherwise, run `npx wrangler login` first to authenticate interactively.
+
+#### Automated (GitHub Actions)
+
+On every push to `trunk`, [the CI workflow](.github/workflows/deploy.yml) builds the site and deploys it automatically. To set this up:
+
+1. Go to your repo **Settings → Secrets and variables → Actions**
+2. Add these repository secrets:
+   - `CLOUDFLARE_API_TOKEN` — a Cloudflare API token with **Cloudflare Pages:Edit** permission
+   - `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account ID (find it in the Cloudflare Dashboard)
+3. Push to `trunk` — the action will deploy automatically.
+
+> **Note:** The first deployment creates a `rho-code-dev` project in Cloudflare Pages.
+> Go to **Cloudflare Dashboard → Workers & Pages → rho-code-dev** to set your custom domain (`rho-code.dev`).
+
 ## About rho
 
 rho is a local AI coding agent that helps developers build software, with a focus on Rust development. Key features include:
