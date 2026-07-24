@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% set default_description = "rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster." %}
+    <meta name="theme-color" content="#0d1117">
+    <meta property="og:locale" content="en_US">
     <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    <meta name="description" content="{% block description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+    <meta name="description" content="{% block description %}{{ default_description }}{% endblock %}">
     <link rel="canonical" href="{{ site.base_url | safe }}{% if current_path %}{{ current_path | safe }}{% else %}/{% endif %}">
     <link rel="icon" type="image/png" href="/static/favicon.png">
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{% block og_title %}{{ site.name }}{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ default_description }}{% endblock %}">
     <meta property="og:url" content="{{ site.base_url | safe }}{% if current_path %}{{ current_path | safe }}{% else %}/{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ site.name }}">
@@ -19,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}{{ site.name }}{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ default_description }}{% endblock %}">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -28,9 +31,16 @@
         "@type": "WebSite",
         "name": "{{ site.name }}",
         "url": "{{ site.base_url | safe }}",
-        "description": "rho is a local AI coding agent for Rust developers. Runs entirely locally, understands your codebase, and helps you build software faster.",
+        "description": "{{ default_description }}",
         "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Linux, macOS, Windows"
+        "operatingSystem": "Linux, macOS, Windows",
+        "sameAs": ["https://github.com/crustyrustacean/rho-coding-agent"],
+        "author": {
+            "@type": "Person",
+            "name": "Jeffery D Mitchell",
+            "url": "https://jeff-mitchell.dev"
+        },
+        "keywords": "AI, coding agent, Rust, developer tools, local AI"
     }
     </script>
 </head>
