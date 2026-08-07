@@ -25,9 +25,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "{{ site.name | escape }}",
+    "name": "{{ site.name }}",
     "url": "{{ site.base_url | safe }}{% if current_path %}{{ current_path | safe }}{% else %}/{% endif %}",
-    "description": "{{ default_description | escape }}",
+    "description": "{{ default_description }}",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": ["Linux", "macOS", "Windows"],
     "sameAs": ["https://github.com/crustyrustacean/rho-coding-agent"],
