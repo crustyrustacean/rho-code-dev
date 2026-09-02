@@ -4,7 +4,7 @@ The official landing page for [rho](https://github.com/crustyrustacean/rho-codin
 
 ## About
 
-This repository contains the source code for the [rho-code.dev](https://rho-code.dev) website, built using [Taxus](https://codeberg.org/crustyrustacean/taxus) static site generator.
+This repository contains the source code for the [rho-code.dev](https://rho-code.dev) website, built using [Taxus](https://github.com/crustyrustacean/taxus) static site generator.
 
 ## Development
 
@@ -14,7 +14,7 @@ This repository contains the source code for the [rho-code.dev](https://rho-code
 
 Install Taxus:
 ```bash
-cargo install --git https://codeberg.org/crustyrustacean/taxus.git taxus
+cargo install --git https://github.com/crustyrustacean/taxus.git taxus
 ```
 
 ### Local Development
@@ -111,7 +111,7 @@ rho is a local AI coding agent that helps developers build software, with a focu
 - **Main Project**: [rho-coding-agent](https://github.com/crustyrustacean/rho-coding-agent)
 - **Documentation**: [crustyrustacean.github.io/rho-coding-agent](https://crustyrustacean.github.io/rho-coding-agent)
 - **Website**: [rho-code.dev](https://rho-code.dev)
-- **Taxus SSG**: [codeberg.org/crustyrustacean/taxus](https://codeberg.org/crustyrustacean/taxus)
+- **Taxus SSG**: [github.com/crustyrustacean/taxus](https://github.com/crustyrustacean/taxus)
 
 ## License
 
